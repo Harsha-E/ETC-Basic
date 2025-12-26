@@ -1,0 +1,224 @@
+/* css/admin.css */
+
+:root {
+    --bg-color: #f1f5f9;
+    --white: #ffffff;
+    --text-dark: #1e293b;
+    --text-gray: #64748b;
+    --primary: #4f46e5; /* Indigo */
+    --primary-hover: #4338ca;
+    --danger: #ef4444;
+    --border: #e2e8f0;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: var(--text-dark);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Container Utility --- */
+.container {
+    width: 100%;
+    max-width: 800px; /* Limits width so it doesn't look stretched */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Login Screen --- */
+#login-screen {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-color);
+}
+
+.login-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+}
+
+.login-card h2 { margin-bottom: 1.5rem; color: var(--text-dark); }
+
+/* --- Dashboard Header --- */
+.dashboard-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content h1 {
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* --- Navigation Tabs --- */
+.tabs {
+    display: flex;
+    background: #e0e7ff; /* Light Indigo Bg */
+    padding: 4px;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    gap: 5px;
+}
+
+.tab-btn {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-gray);
+    transition: all 0.2s;
+}
+
+.tab-btn.active {
+    background: var(--white);
+    color: var(--primary);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* --- Forms & Inputs --- */
+.form-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.4s ease;
+}
+
+.form-group { margin-bottom: 1.2rem; }
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    box-sizing: border-box; /* Crucial for alignment */
+    transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* --- Buttons --- */
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+.btn-primary:hover { background: var(--primary-hover); }
+
+.btn-logout {
+    background: white;
+    border: 1px solid var(--border);
+    color: var(--text-dark);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.btn-logout:hover { background: #f8fafc; border-color: #cbd5e1; }
+
+/* --- Data Lists --- */
+.data-list-container {
+    margin-top: 3rem;
+}
+
+.list-header {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.5rem;
+}
+
+.list-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.1s;
+}
+
+.item-content h4 { margin: 0 0 4px 0; font-size: 1rem; color: var(--text-dark); }
+.item-content p { margin: 0; color: var(--text-gray); font-size: 0.9rem; }
+.tag-badge { 
+    display: inline-block; 
+    font-size: 0.75rem; 
+    padding: 2px 8px; 
+    background: #e0e7ff; 
+    color: var(--primary); 
+    border-radius: 4px; 
+    margin-right: 8px;
+}
+
+.btn-delete {
+    background: #fef2f2;
+    color: var(--danger);
+    border: 1px solid #fee2e2;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    flex-shrink: 0; /* Prevents button from squishing */
+    margin-left: 15px;
+}
+.btn-delete:hover { background: #fee2e2; border-color: #fecaca; }
+
+/* --- Utilities --- */
+.hidden { display: none !important; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
