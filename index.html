@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETC | Tech Blueprint</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <header class="glass-header">
+        <div class="logo">ETC <span class="gradient-text">Tech Blueprint</span></div>
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+            <span class="material-icons">light_mode</span>
+        </button>
+    </header>
+
+    <main>
+        <section id="announcements" class="scroll-reveal">
+            <h2>📢 Latest Announcements</h2>
+            <div id="announcement-list" class="grid-container">
+                <div class="card skeleton">Loading updates...</div>
+            </div>
+        </section>
+
+        <section id="prompts" class="scroll-reveal">
+            <h2>💡 Prompts</h2>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="Hackathon Queries">Hackathon</button>
+                <button class="filter-btn" data-filter="WebDev and Integration">WebDev</button>
+                <button class="filter-btn" data-filter="ML Integration">ML</button>
+            </div>
+            <div id="prompt-list" class="grid-container">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ETC Club. All rights reserved.</p>
+        <a href="admin.html" class="admin-link">Admin Portal</a>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

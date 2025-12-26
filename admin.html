@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETC Admin Portal</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <div id="login-screen">
+        <div class="login-card">
+            <h2>Admin Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="email@etc.com" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn-primary">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="dashboard" class="hidden">
+        
+        <header class="dashboard-header">
+            <div class="container header-content">
+                <h1>ETC Portal Manager</h1>
+                <button class="btn-logout" id="logout-btn">Log Out</button>
+            </div>
+        </header>
+
+        <div class="container">
+            
+            <nav class="tabs">
+                <button class="tab-btn active" onclick="switchTab('announcements')">Announcements</button>
+                <button class="tab-btn" onclick="switchTab('prompts')">Prompts</button>
+            </nav>
+
+            <div id="tab-announcements" class="form-section">
+                <div class="form-card">
+                    <label>Post New Announcement</label>
+                    <textarea id="ann-content" rows="4" placeholder="Write your update here..."></textarea>
+                    <button class="btn-primary" onclick="postData('announcements')">Publish Announcement</button>
+                </div>
+
+                <div class="data-list-container">
+                    <div class="list-header">History</div>
+                    <div id="list-announcements">
+                        </div>
+                </div>
+            </div>
+
+            <div id="tab-prompts" class="form-section hidden">
+                <div class="form-card">
+                    <div class="form-group">
+                        <label>Prompt Title</label>
+                        <input type="text" id="prompt-title" placeholder="e.g. Array Mastery">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="prompt-cat">
+                            <option value="Hackathon Queries">Hackathon Queries</option>
+                            <option value="WebDev and Integration">WebDev and Integration</option>
+                            <option value="ML Integration">ML Integration</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="prompt-content" rows="4" placeholder="Explain the task..."></textarea>
+                    </div>
+
+                    <button class="btn-primary" onclick="postData('prompts')">Publish Prompt</button>
+                </div>
+
+                <div class="data-list-container">
+                    <div class="list-header">Active Prompts</div>
+                    <div id="list-prompts">
+                        </div>
+                </div>
+            </div>
+
+        </div> </div> <script type="module" src="js/admin.js"></script>
+</body>
+</html>
